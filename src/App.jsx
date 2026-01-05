@@ -58,48 +58,60 @@ const Countdown = () => {
   );
 };
 
-// Backend-Powered Email Form Component
+// Netlify Form Component
 const EmailForm = ({ onSuccess }) => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('loading');
     
-    try {
-      const response = await fetch('/.netlify/functions/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
+    // Standard Netlify Form Submission
+    const formData = new FormData(e.target);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
         setStatus('success');
         if (onSuccess) onSuccess();
-      } else {
+      })
+      .catch((error) => {
+        console.error("Form error:", error);
         setStatus('error');
-      }
-    } catch (error) {
-      console.error("Subscription error:", error);
-      setStatus('error');
-    }
+      });
   };
 
   if (status === 'success') {
     return (
       <div className="w-full bg-[#FFC400]/10 border border-[#FFC400] p-8 text-center vintage-shadow animate-fade-in-up">
         <h3 className="text-2xl font-black text-white uppercase mb-0 font-anton">Thank you for signing up.</h3>
-        <p className="text-zinc-400 text-xs mt-2 uppercase tracking-wide">Welcome to the movement.</p>
+        <p className="text-zinc-400 text-xs mt-2 uppercase tracking-wide">We'll be in touch soon.</p>
       </div>
     );
   }
 
   return (
     <div className="w-full bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 p-2 md:p-3 rounded-none vintage-shadow transform transition-all hover:border-zinc-700">
-      <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-2">
+      <form 
+        name="subscribe" 
+        method="POST" 
+        data-netlify="true" 
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+        className="flex flex-col md:flex-row gap-2"
+      >
+        <input type="hidden" name="form-name" value="subscribe" />
+        <div hidden>
+          <input name="bot-field" />
+        </div>
+        
         <input 
           type="email" 
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="ENTER YOUR EMAIL ADDRESS" 
@@ -120,7 +132,7 @@ const EmailForm = ({ onSuccess }) => {
       </form>
       {status === 'error' && (
         <p className="text-red-500 text-[10px] mt-2 uppercase tracking-wider text-center md:text-left pl-1">
-          Something went wrong. Please try again.
+          Submission failed. Please try again later.
         </p>
       )}
       <p className="text-zinc-500 text-[10px] mt-2 uppercase tracking-wider text-center md:text-left pl-1">
