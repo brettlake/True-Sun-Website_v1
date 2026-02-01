@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply font-sans bg-[#121212] text-[#f2f2f2] overflow-x-hidden selection:bg-[#FFC400] selection:text-black;
   }
@@ -30,6 +33,18 @@
 
   .vintage-shadow {
     box-shadow: 0 4px 30px -5px rgba(255, 196, 0, 0.2), 0 10px 60px -10px rgba(0,0,0,0.5);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
 }
 
