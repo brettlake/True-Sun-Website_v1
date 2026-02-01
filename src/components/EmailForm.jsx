@@ -10,14 +10,16 @@ const EmailForm = ({ onSuccess }) => {
     e.preventDefault();
     setStatus('loading');
 
-    const formData = new FormData(e.target);
-
-    fetch("/", {
+    fetch("https://api.convertkit.com/v3/forms/9037652/subscribe", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({
+        api_key: "g59eWMdjwtyd-LuQZe_WwQ",
+        email,
+      }),
     })
-      .then(() => {
+      .then((res) => {
+        if (!res.ok) throw new Error("Subscription failed");
         setStatus('success');
         if (onSuccess) onSuccess();
       })
@@ -39,18 +41,9 @@ const EmailForm = ({ onSuccess }) => {
   return (
     <div className="w-full bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 p-2 md:p-3 rounded-none vintage-shadow transform transition-all hover:border-zinc-700">
       <form
-        name="subscribe"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
         className="flex flex-col md:flex-row gap-2"
       >
-        <input type="hidden" name="form-name" value="subscribe" />
-        <div hidden>
-          <input name="bot-field" />
-        </div>
-
         <label htmlFor="email-input" className="sr-only">Email address</label>
         <input
           id="email-input"
