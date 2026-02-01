@@ -31,7 +31,7 @@ const PrivacyPolicy = ({ onClose }) => {
           <X size={24} />
         </button>
 
-        <h2 className="text-3xl font-black text-white uppercase mb-6 font-anton">Privacy Policy</h2>
+        <h2 className="text-3xl font-black text-white uppercase mb-6 font-heading">Privacy Policy</h2>
 
         <div className="space-y-4 text-zinc-400 text-sm leading-relaxed">
           <p>

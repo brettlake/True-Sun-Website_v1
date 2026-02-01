@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;700;900&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@
     @apply font-sans bg-[#121212] text-[#f2f2f2] overflow-x-hidden selection:bg-[#FFC400] selection:text-black;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-anton uppercase;
+    @apply font-heading uppercase;
   }
 }
 
@@ -50,9 +50,13 @@
 
 /* Autofill Fix */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #1a1a1a inset !important;
     -webkit-text-fill-color: white !important;
 }

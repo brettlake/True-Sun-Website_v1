@@ -29,7 +29,7 @@ const Countdown = () => {
   if (!timeLeft) {
     return (
       <div className="mt-8 text-center">
-        <p className="text-3xl md:text-5xl font-black text-[#FFC400] font-anton uppercase tracking-wide">
+        <p className="text-3xl md:text-5xl font-black text-[#FFC400] font-heading uppercase tracking-wide">
           Now Available
         </p>
       </div>
@@ -41,7 +41,7 @@ const Countdown = () => {
       {Object.entries(timeLeft).map(([interval, value]) => (
         <div key={interval} className="flex flex-col items-center group">
           <div className="w-16 h-16 md:w-24 md:h-24 bg-zinc-900/80 border border-zinc-800 flex items-center justify-center relative overflow-hidden group-hover:border-[#FFC400]/50 transition-colors duration-500 backdrop-blur-sm shadow-lg shadow-black/50">
-            <span className="text-2xl md:text-5xl font-black text-[#FFC400] font-anton z-10" aria-label={`${value} ${interval}`}>
+            <span className="text-2xl md:text-5xl font-black text-[#FFC400] font-heading z-10" aria-label={`${value} ${interval}`}>
               {value < 10 ? `0${value}` : value}
             </span>
           </div>

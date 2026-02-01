@@ -2,7 +2,7 @@ import { Play } from 'lucide-react';
 
 const TrailerPreview = () => (
   <div
-    className="w-full max-w-2xl aspect-video bg-zinc-900 border border-zinc-800 mb-10 relative group cursor-pointer shadow-2xl overflow-hidden rounded-sm transition-all duration-300 hover:border-zinc-700"
+    className="w-full max-w-2xl aspect-video bg-zinc-900 border border-zinc-800 mb-8 relative group cursor-pointer shadow-2xl overflow-hidden rounded-sm transition-all duration-300 hover:border-zinc-700"
     role="button"
     tabIndex={0}
     aria-label="Play official trailer"

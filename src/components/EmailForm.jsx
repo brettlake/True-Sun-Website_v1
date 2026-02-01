@@ -32,7 +32,7 @@ const EmailForm = ({ onSuccess }) => {
   if (status === 'success') {
     return (
       <div className="w-full bg-[#FFC400]/10 border border-[#FFC400] p-8 text-center vintage-shadow animate-fade-in-up" role="status">
-        <h3 className="text-2xl font-black text-white uppercase mb-0 font-anton">Thank you for signing up.</h3>
+        <h3 className="text-2xl font-black text-white uppercase mb-0 font-heading">Thank you for signing up.</h3>
         <p className="text-zinc-400 text-xs mt-2 uppercase tracking-wide">We'll be in touch soon.</p>
       </div>
     );

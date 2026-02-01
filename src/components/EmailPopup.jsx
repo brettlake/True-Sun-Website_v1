@@ -65,7 +65,7 @@ const EmailPopup = () => {
           <X size={24} />
         </button>
 
-        <h3 className="text-4xl font-black text-white uppercase mb-2 font-anton">Don't Miss Out</h3>
+        <h3 className="text-4xl font-black text-white uppercase mb-2 font-heading">Don't Miss Out</h3>
         <p className="text-zinc-400 mb-8 font-medium">Join the list to get exclusive updates and early access to the premiere.</p>
 
         <div className="w-full">

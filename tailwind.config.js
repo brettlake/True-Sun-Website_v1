@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        anton: ['Anton', 'sans-serif'],
+        heading: ['Roboto Condensed', 'sans-serif'],
         sans: ['Barlow Condensed', 'sans-serif'],
       },
       colors: {
