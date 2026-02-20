@@ -35,7 +35,7 @@ const PrivacyPolicy = ({ onClose }) => {
 
         <div className="space-y-4 text-zinc-400 text-sm leading-relaxed">
           <p>
-            <strong className="text-zinc-200">Last updated:</strong> January 2026
+            <strong className="text-zinc-200">Last updated:</strong> February 2026
           </p>
 
           <h3 className="text-lg text-white font-bold uppercase tracking-wide pt-2">Information We Collect</h3>
@@ -50,7 +50,9 @@ const PrivacyPolicy = ({ onClose }) => {
 
           <h3 className="text-lg text-white font-bold uppercase tracking-wide pt-2">Data Storage</h3>
           <p>
-            Email submissions are processed and stored securely through Netlify. We do not sell, trade, or share your personal information with third parties.
+            Email subscriptions are processed and stored by Kit (ConvertKit), our email marketing provider. You can review Kit's privacy practices at{' '}
+            <a href="https://kit.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#FFC400] hover:underline">kit.com/privacy</a>.
+            We do not sell, trade, or share your personal information with any other third parties.
           </p>
 
           <h3 className="text-lg text-white font-bold uppercase tracking-wide pt-2">Cookies</h3>
@@ -60,12 +62,13 @@ const PrivacyPolicy = ({ onClose }) => {
 
           <h3 className="text-lg text-white font-bold uppercase tracking-wide pt-2">Your Rights</h3>
           <p>
-            You may request removal of your email from our mailing list at any time by contacting us. We will promptly delete your information upon request.
+            Every email we send includes an unsubscribe link so you can opt out at any time. You may also request removal of your data by contacting us directly, and we will ensure your information is deleted promptly.
           </p>
 
           <h3 className="text-lg text-white font-bold uppercase tracking-wide pt-2">Contact</h3>
           <p>
-            For privacy-related inquiries, please contact Lake Media.
+            For privacy-related inquiries, please reach out via our{' '}
+            <a href="/contact" className="text-[#FFC400] hover:underline">contact page</a>.
           </p>
         </div>
       </div>

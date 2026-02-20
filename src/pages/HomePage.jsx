@@ -82,7 +82,7 @@ export default function HomePage() {
             style={{ transform: `translate(-50%, -50%) translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0003})` }}
           />
           <div
-            className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/concrete-wall.png')] mix-blend-overlay z-10 will-change-transform"
+            className="absolute inset-0 opacity-20 bg-[url('/concrete-wall.png')] mix-blend-overlay z-10 will-change-transform"
             style={{ transform: `translateY(${scrollY * 0.15}px)` }}
           />
         </div>
@@ -112,15 +112,15 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 z-20 animate-bounce">
+        <a href="#synopsis" className="absolute bottom-10 z-20 animate-bounce" aria-label="Scroll to synopsis">
           <ArrowDown size={20} className="text-zinc-600" />
-        </div>
+        </a>
       </section>
 
       <SectionDivider />
 
       {/* ── Synopsis ── */}
-      <section className="relative py-24 md:py-36 bg-black">
+      <section id="synopsis" className="relative py-24 md:py-36 bg-black">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeInSection>
             <span className="text-[#FFC400] text-xs uppercase tracking-[0.3em] font-bold mb-6 block">The Story</span>
@@ -128,7 +128,7 @@ export default function HomePage() {
               In Wards 7 and 8 of Washington, DC, a grassroots mentorship program is rewriting the
               story for young men caught between the streets and a second chance.
             </p>
-            <p className="text-zinc-500 text-base md:text-lg mt-8 max-w-2xl mx-auto leading-relaxed uppercase tracking-wide font-heading font-bold">
+            <p className="text-zinc-500 text-base md:text-lg mt-8 max-w-2xl mx-auto leading-relaxed tracking-wide font-heading font-bold">
               True Sun follows their journey — the setbacks, the breakthroughs, and the quiet
               moments of transformation that never make the news.
             </p>
