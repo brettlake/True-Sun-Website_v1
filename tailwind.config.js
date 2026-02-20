@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         heading: ['Roboto Condensed', 'sans-serif'],
         sans: ['Barlow Condensed', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
       colors: {
         primary: '#ffc400',

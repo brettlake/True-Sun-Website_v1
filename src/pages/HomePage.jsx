@@ -35,7 +35,7 @@ const PullQuote = ({ quote, name, role }) => (
           >
             &ldquo;
           </span>
-          <p className="text-2xl md:text-4xl lg:text-5xl font-light text-white leading-snug md:leading-tight tracking-tight relative z-10">
+          <p className="text-2xl md:text-4xl lg:text-5xl font-normal italic text-white leading-snug md:leading-tight tracking-tight relative z-10 font-serif">
             &ldquo;{quote}&rdquo;
           </p>
           <footer className="mt-8 flex items-center justify-center gap-3 relative z-10">
@@ -112,9 +112,13 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <a href="#synopsis" className="absolute bottom-10 z-20 animate-bounce" aria-label="Scroll to synopsis">
-          <ArrowDown size={20} className="text-zinc-600" />
-        </a>
+        <button
+          onClick={() => document.getElementById('synopsis').scrollIntoView({ behavior: 'smooth' })}
+          className="absolute bottom-10 z-20 animate-bounce text-zinc-600 cursor-pointer"
+          aria-label="Scroll to synopsis"
+        >
+          <ArrowDown size={20} />
+        </button>
       </section>
 
       <SectionDivider />
@@ -136,16 +140,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* ── Pull Quote 1 ── */}
       <PullQuote
         quote="I was lost. Completely lost. Then somebody saw something in me I couldn't see in myself."
         name="Subject Name"
         role="Program Participant"
       />
-
-      <SectionDivider />
 
       {/* ── The People ── */}
       <section className="relative py-24 md:py-36 bg-black">
@@ -201,8 +201,6 @@ export default function HomePage() {
         name="Mentor Name"
         role="Community Mentor"
       />
-
-      <SectionDivider />
 
       {/* ── The Setting ── */}
       <section className="relative py-24 md:py-36 bg-[#121212] overflow-hidden">

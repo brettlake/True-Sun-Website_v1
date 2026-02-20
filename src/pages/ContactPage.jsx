@@ -78,7 +78,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[#1a1a1a] text-white placeholder-zinc-500 px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#FFC400] uppercase font-bold tracking-wider text-sm border border-zinc-800"
+                        className="w-full bg-[#1a1a1a] text-white placeholder-zinc-500 px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#FFC400] text-sm border border-zinc-800"
                       />
                     </div>
                     <div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#1a1a1a] text-white placeholder-zinc-500 px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#FFC400] uppercase font-bold tracking-wider text-sm border border-zinc-800"
+                        className="w-full bg-[#1a1a1a] text-white placeholder-zinc-500 px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#FFC400] text-sm border border-zinc-800"
                       />
                     </div>
                     <div>
@@ -102,7 +102,7 @@ export default function ContactPage() {
                         rows={6}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-[#1a1a1a] text-white placeholder-zinc-500 px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#FFC400] uppercase font-bold tracking-wider text-sm border border-zinc-800 resize-none"
+                        className="w-full bg-[#1a1a1a] text-white placeholder-zinc-500 px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#FFC400] text-sm border border-zinc-800 resize-none"
                       />
                     </div>
                     <Button type="submit" variant="primary" className="w-full md:w-auto">
